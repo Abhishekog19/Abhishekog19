@@ -1,0 +1,560 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1800" viewBox="0 0 800 1800">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&amp;display=swap');
+      .pixel { font-family: 'Courier New', monospace; }
+      .vt { font-family: 'Courier New', monospace; }
+    </style>
+
+    <!-- Animations -->
+    <animate id="pulse"/>
+
+    <!-- Gradients -->
+    <linearGradient id="redGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#cc0000"/>
+      <stop offset="100%" style="stop-color:#ff4444"/>
+    </linearGradient>
+    <linearGradient id="darkGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e"/>
+      <stop offset="100%" style="stop-color:#0f0f1a"/>
+    </linearGradient>
+    <linearGradient id="hpGreen" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#66bb6a"/>
+      <stop offset="100%" style="stop-color:#a5d6a7"/>
+    </linearGradient>
+    <linearGradient id="hpBlue" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#42a5f5"/>
+      <stop offset="100%" style="stop-color:#90caf9"/>
+    </linearGradient>
+    <linearGradient id="hpPurple" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ce93d8"/>
+      <stop offset="100%" style="stop-color:#e1bee7"/>
+    </linearGradient>
+    <linearGradient id="hpOrange" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ffa726"/>
+      <stop offset="100%" style="stop-color:#ffcc80"/>
+    </linearGradient>
+    <linearGradient id="xpGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#7c3aed"/>
+      <stop offset="100%" style="stop-color:#a78bfa"/>
+    </linearGradient>
+    <linearGradient id="stripeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ff4444"/>
+      <stop offset="33%" style="stop-color:#cc0000"/>
+      <stop offset="66%" style="stop-color:#ff4444"/>
+      <stop offset="100%" style="stop-color:#cc0000"/>
+    </linearGradient>
+
+    <!-- Glow filters -->
+    <filter id="glow-red">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glow-gold">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glow-blue">
+      <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+
+    <!-- Clip paths -->
+    <clipPath id="tcClip"><rect width="800" height="180" rx="12"/></clipPath>
+    <clipPath id="hp1Clip"><rect width="200" height="6" rx="3"/></clipPath>
+  </defs>
+
+  <!-- ============ BACKGROUND ============ -->
+  <rect width="800" height="1800" fill="#0a0a14"/>
+
+  <!-- Subtle grid pattern -->
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1a1a2e" stroke-width="0.5"/>
+  </pattern>
+  <rect width="800" height="1800" fill="url(#grid)" opacity="0.6"/>
+
+  <!-- ============ TRAINER CARD ============ -->
+  <g transform="translate(20, 20)" filter="url(#shadow)">
+    <!-- Card background -->
+    <rect width="760" height="185" rx="12" fill="url(#redGrad)"/>
+    <!-- Stripe pattern -->
+    <rect width="760" height="6" rx="0" fill="url(#stripeGrad)" opacity="0.6"/>
+
+    <!-- Pokeball watermark -->
+    <circle cx="650" cy="92" r="80" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="2"/>
+    <circle cx="650" cy="92" r="55" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+    <line x1="570" y1="92" x2="730" y2="92" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+
+    <!-- Photo box -->
+    <rect x="20" y="18" width="80" height="90" rx="8" fill="#1a1a2e" stroke="#ff8888" stroke-width="2"/>
+    <text x="60" y="68" text-anchor="middle" font-size="32">👨‍💻</text>
+    <rect x="20" y="88" width="80" height="20" rx="0" fill="rgba(0,0,0,0.7)"/>
+    <rect x="20" y="96" width="80" height="12" rx="0" fill="rgba(0,0,0,0.7)"/>
+    <text x="60" y="106" text-anchor="middle" font-family="'Courier New', monospace" font-size="7" fill="#ffcc00" letter-spacing="1">TRAINER</text>
+    <text x="60" y="120" text-anchor="middle" font-family="'Courier New', monospace" font-size="7" fill="#ffcc00">#71656</text>
+
+    <!-- Name & info -->
+    <text x="115" y="42" font-family="'Courier New', monospace" font-size="20" font-weight="bold" fill="#ffffff" letter-spacing="1">ABHISHEK PANDEY</text>
+    <text x="115" y="60" font-family="'Courier New', monospace" font-size="11" fill="#ffdddd">Full-Stack &amp; Mobile Trainer · CS Student</text>
+    <text x="115" y="75" font-family="'Courier New', monospace" font-size="10" fill="#ffaaaa">Mumbai Region · Pokédex ID: ABHISHEKOG19</text>
+
+    <!-- Stats row -->
+    <rect x="115" y="83" width="80" height="38" rx="5" fill="rgba(0,0,0,0.35)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+    <text x="155" y="100" text-anchor="middle" font-family="'Courier New', monospace" font-size="14" font-weight="bold" fill="#ffcc00">07</text>
+    <text x="155" y="113" text-anchor="middle" font-family="'Courier New', monospace" font-size="8" fill="#ffcccc">CAUGHT</text>
+
+    <rect x="202" y="83" width="80" height="38" rx="5" fill="rgba(0,0,0,0.35)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+    <text x="242" y="100" text-anchor="middle" font-family="'Courier New', monospace" font-size="14" font-weight="bold" fill="#ffcc00">03</text>
+    <text x="242" y="113" text-anchor="middle" font-family="'Courier New', monospace" font-size="8" fill="#ffcccc">PLATFORMS</text>
+
+    <rect x="289" y="83" width="80" height="38" rx="5" fill="rgba(0,0,0,0.35)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+    <text x="329" y="100" text-anchor="middle" font-family="'Courier New', monospace" font-size="14" font-weight="bold" fill="#ffcc00">LV 12</text>
+    <text x="329" y="113" text-anchor="middle" font-family="'Courier New', monospace" font-size="8" fill="#ffcccc">DEV RANK</text>
+
+    <rect x="376" y="83" width="80" height="38" rx="5" fill="rgba(0,0,0,0.35)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+    <text x="416" y="100" text-anchor="middle" font-family="'Courier New', monospace" font-size="14" font-weight="bold" fill="#ffcc00">★ 2nd</text>
+    <text x="416" y="113" text-anchor="middle" font-family="'Courier New', monospace" font-size="8" fill="#ffcccc">SIH 2025</text>
+
+    <!-- XP Bar -->
+    <text x="115" y="138" font-family="'Courier New', monospace" font-size="9" fill="#ffdddd">XP PROGRESS — LVL 12</text>
+    <text x="460" y="138" text-anchor="end" font-family="'Courier New', monospace" font-size="9" fill="#ffcc00">7,200 / 10,000</text>
+    <rect x="115" y="142" width="345" height="8" rx="4" fill="rgba(0,0,0,0.4)"/>
+    <rect x="115" y="142" width="248" height="8" rx="4" fill="url(#xpGrad)">
+      <animate attributeName="width" from="0" to="248" dur="1.5s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1"/>
+    </rect>
+
+    <!-- Links -->
+    <rect x="115" y="156" width="75" height="20" rx="4" fill="rgba(0,0,0,0.4)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+    <text x="152" y="169" text-anchor="middle" font-family="'Courier New', monospace" font-size="9" fill="#ffffff">⬡ GitHub</text>
+
+    <rect x="196" y="156" width="75" height="20" rx="4" fill="rgba(0,0,0,0.4)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+    <text x="233" y="169" text-anchor="middle" font-family="'Courier New', monospace" font-size="9" fill="#ffffff">in LinkedIn</text>
+
+    <rect x="277" y="156" width="75" height="20" rx="4" fill="rgba(0,0,0,0.4)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+    <text x="314" y="169" text-anchor="middle" font-family="'Courier New', monospace" font-size="9" fill="#ffffff">✕ Twitter</text>
+
+    <rect x="358" y="156" width="75" height="20" rx="4" fill="rgba(0,0,0,0.4)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+    <text x="395" y="169" text-anchor="middle" font-family="'Courier New', monospace" font-size="9" fill="#ffffff">✉ Email</text>
+  </g>
+
+  <!-- ============ GYM BADGES ============ -->
+  <g transform="translate(20, 220)">
+    <rect width="760" height="200" rx="10" fill="#1a1a2e" stroke="#cc0000" stroke-width="2"/>
+    <rect x="0" y="0" width="760" height="32" rx="10" fill="#cc0000"/>
+    <rect x="0" y="20" width="760" height="12" fill="#cc0000"/>
+    <text x="20" y="21" font-family="'Courier New', monospace" font-size="10" fill="#ffcc00" letter-spacing="2">▶ GYM BADGES COLLECTED</text>
+
+    <!-- Badge 1 - Agentic -->
+    <circle cx="75" cy="100" r="30" fill="#1a237e" stroke="#7986cb" stroke-width="2" filter="url(#glow-blue)"/>
+    <text x="75" y="108" text-anchor="middle" font-size="20">🤖</text>
+    <text x="75" y="148" text-anchor="middle" font-family="'Courier New', monospace" font-size="7" fill="#e0e0e0">AGENTIC</text>
+    <text x="75" y="158" text-anchor="middle" font-family="'Courier New', monospace" font-size="7" fill="#e0e0e0">BADGE</text>
+    <text x="75" y="170" text-anchor="middle" font-family="'Courier New', monospace" font-size="7" fill="#7986cb">SIH · 2nd</text>
+
+    <!-- Badge 2 - Green -->
+    <circle cx="175" cy="100" r="30" fill="#1b5e20" stroke="#66bb6a" stroke-width="2" filter="url(#glow-blue)"/>
+    <text x="175" y="108" text-anchor="middle" font-size="20">🌿</text>
+    <text x="175" y="148" text-anchor="middle" font-family="'Courier New', monospace" font-size="7" fill="#e0e0e0">GREEN</text>
+    <text x="175" y="158" text-anchor="middle" font-family="'Courier New', monospace" font-size="7" fill="#e0e0e0">BADGE</text>
+    <text x="175" y="170" text-anchor="middle" font-family="'Courier New', monospace" font-size="7" fill="#66bb6a">Clean Tech</text>
+
+    <!-- Badge 3 - Mobile -->
+    <circle cx="275" cy="100" r="30" fill="#4a148c" stroke="#ce93d8" stroke-width="2" filter="url(#glow-blue)"/>
+    <text x="275" y="108" text-anchor="middle" font-size="20">📱</text>
+    <text x="275" y="148" text-anchor="middle" font-family="'Courier New', monospace" font-size="7" fill="#e0e0e0">MOBILE</text>
+    <text x="275" y="158" text-anchor="middle" font-family="'Courier New', monospace" font-size="7" fill="#e0e0e0">BADGE</text>
+    <text x="275" y="170" text-anchor="middle" font-family="'Courier New', monospace" font-size="7" fill="#ce93d8">Android+Flutter</text>
+
+    <!-- Badge 4 - Hackathon -->
+    <circle cx="375" cy="100" r="30" fill="#b71c1c" stroke="#ef9a9a" stroke-width="2" filter="url(#glow-red)"/>
+    <text x="375" y="108" text-anchor="middle" font-size="20">🔥</text>
+    <text x="375" y="148" text-anchor="middle" font-family="'Courier New', monospace" font-size="7" fill="#e0e0e0">HACKATHON</text>
+    <text x="375" y="158" text-anchor="middle" font-family="'Courier New', monospace" font-size="7" fill="#e0e0e0">BADGE</text>
+    <text x="375" y="170" text-anchor="middle" font-family="'Courier New', monospace" font-size="7" fill="#ef9a9a">Multi-build</text>
+
+    <!-- Badge 5 - Full Stack -->
+    <circle cx="475" cy="100" r="30" fill="#0d47a1" stroke="#90caf9" stroke-width="2" filter="url(#glow-blue)"/>
+    <text x="475" y="108" text-anchor="middle" font-size="20">⚡</text>
+    <text x="475" y="148" text-anchor="middle" font-family="'Courier New', monospace" font-size="7" fill="#e0e0e0">FULL-STACK</text>
+    <text x="475" y="158" text-anchor="middle" font-family="'Courier New', monospace" font-size="7" fill="#e0e0e0">BADGE</text>
+    <text x="475" y="170" text-anchor="middle" font-family="'Courier New', monospace" font-size="7" fill="#90caf9">Web·API·DB</text>
+
+    <!-- Badge 6 - IoT -->
+    <circle cx="575" cy="100" r="30" fill="#e65100" stroke="#ffb74d" stroke-width="2" filter="url(#glow-red)"/>
+    <text x="575" y="108" text-anchor="middle" font-size="20">🔧</text>
+    <text x="575" y="148" text-anchor="middle" font-family="'Courier New', monospace" font-size="7" fill="#e0e0e0">IOT</text>
+    <text x="575" y="158" text-anchor="middle" font-family="'Courier New', monospace" font-size="7" fill="#e0e0e0">BADGE</text>
+    <text x="575" y="170" text-anchor="middle" font-family="'Courier New', monospace" font-size="7" fill="#ffb74d">RPi · Arduino</text>
+
+    <!-- Badge 7 - Locked -->
+    <circle cx="685" cy="100" r="30" fill="#37474f" stroke="#546e7a" stroke-width="2" opacity="0.3"/>
+    <text x="685" y="108" text-anchor="middle" font-size="20" opacity="0.3">🧠</text>
+    <text x="685" y="148" text-anchor="middle" font-family="'Courier New', monospace" font-size="7" fill="#546e7a">AI/ML</text>
+    <text x="685" y="158" text-anchor="middle" font-family="'Courier New', monospace" font-size="7" fill="#546e7a">BADGE</text>
+    <text x="685" y="170" text-anchor="middle" font-family="'Courier New', monospace" font-size="7" fill="#37474f">Unlocking...</text>
+  </g>
+
+  <!-- ============ POKÉDEX ENTRIES ============ -->
+  <g transform="translate(20, 435)">
+    <rect width="760" height="590" rx="10" fill="#1a1a2e" stroke="#cc0000" stroke-width="2"/>
+    <rect x="0" y="0" width="760" height="32" rx="10" fill="#cc0000"/>
+    <rect x="0" y="20" width="760" height="12" fill="#cc0000"/>
+    <text x="20" y="21" font-family="'Courier New', monospace" font-size="10" fill="#ffcc00" letter-spacing="2">▶ POKÉDEX — PROJECTS CAUGHT</text>
+
+    <!-- Entry 1 — AttendaClap -->
+    <g transform="translate(16, 45)">
+      <rect width="728" height="96" rx="8" fill="#0f0f1a" stroke="#2a2a4a" stroke-width="1"/>
+      <rect x="10" y="10" width="64" height="64" rx="8" fill="#0d1b2e"/>
+      <text x="42" y="52" text-anchor="middle" font-size="30">🎓</text>
+      <text x="85" y="26" font-family="'Courier New', monospace" font-size="8" fill="#546e7a">#001</text>
+      <text x="85" y="40" font-family="'Courier New', monospace" font-size="13" font-weight="bold" fill="#e2e8f0">ATTENDACLAP</text>
+      <rect x="85" y="44" width="44" height="14" rx="3" fill="#1565c0"/>
+      <text x="107" y="54" text-anchor="middle" font-family="'Courier New', monospace" font-size="7" fill="#e3f2fd">FLYING</text>
+      <rect x="134" y="44" width="34" height="14" rx="3" fill="#b71c1c"/>
+      <text x="151" y="54" text-anchor="middle" font-family="'Courier New', monospace" font-size="7" fill="#ffcdd2">FIRE</text>
+      <text x="85" y="68" font-family="'Courier New', monospace" font-size="9" fill="#9fa8da">Calculates safe bunks before trainer faints academically.</text>
+      <text x="85" y="80" font-family="'Courier New', monospace" font-size="9" fill="#9fa8da">Evolves at 75% attendance. Flutter · Firebase · Riverpod</text>
+      <rect x="85" y="84" width="200" height="5" rx="2" fill="#1e1e3a"/>
+      <rect x="85" y="84" width="160" height="5" rx="2" fill="url(#hpGreen)">
+        <animate attributeName="width" from="0" to="160" dur="1.2s" begin="0.3s" fill="freeze"/>
+      </rect>
+      <text x="292" y="89" font-family="'Courier New', monospace" font-size="8" fill="#546e7a">HP 80%</text>
+      <rect x="630" y="10" width="84" height="18" rx="4" fill="#1b5e20"/>
+      <text x="672" y="22" text-anchor="middle" font-family="'Courier New', monospace" font-size="8" fill="#a5d6a7">● ACTIVE</text>
+    </g>
+
+    <!-- Entry 2 — EREBUS -->
+    <g transform="translate(16, 150)">
+      <rect width="728" height="96" rx="8" fill="#0f0f1a" stroke="#2a2a4a" stroke-width="1"/>
+      <rect x="10" y="10" width="64" height="64" rx="8" fill="#0d1220"/>
+      <text x="42" y="52" text-anchor="middle" font-size="30">📊</text>
+      <text x="85" y="26" font-family="'Courier New', monospace" font-size="8" fill="#546e7a">#002</text>
+      <text x="85" y="40" font-family="'Courier New', monospace" font-size="13" font-weight="bold" fill="#e2e8f0">EREBUSDEX</text>
+      <rect x="85" y="44" width="52" height="14" rx="3" fill="#6a1b9a"/>
+      <text x="111" y="54" text-anchor="middle" font-family="'Courier New', monospace" font-size="7" fill="#e1bee7">PSYCHIC</text>
+      <rect x="142" y="44" width="34" height="14" rx="3" fill="#212121"/>
+      <text x="159" y="54" text-anchor="middle" font-family="'Courier New', monospace" font-size="7" fill="#bdbdbd">DARK</text>
+      <text x="85" y="68" font-family="'Courier New', monospace" font-size="9" fill="#9fa8da">Legendary — reads filings, never hallucinates. Every claim</text>
+      <text x="85" y="80" font-family="'Courier New', monospace" font-size="9" fill="#9fa8da">is source-cited. Feared by Bloomberg. SIH 2025 · 2nd ★</text>
+      <rect x="85" y="84" width="200" height="5" rx="2" fill="#1e1e3a"/>
+      <rect x="85" y="84" width="190" height="5" rx="2" fill="url(#hpPurple)">
+        <animate attributeName="width" from="0" to="190" dur="1.2s" begin="0.5s" fill="freeze"/>
+      </rect>
+      <text x="292" y="89" font-family="'Courier New', monospace" font-size="8" fill="#546e7a">HP 95%</text>
+      <rect x="606" y="10" width="108" height="18" rx="4" fill="#4a148c"/>
+      <text x="660" y="22" text-anchor="middle" font-family="'Courier New', monospace" font-size="8" fill="#e040fb">★ TROPHY</text>
+    </g>
+
+    <!-- Entry 3 — Saansation -->
+    <g transform="translate(16, 255)">
+      <rect width="728" height="96" rx="8" fill="#0f0f1a" stroke="#2a2a4a" stroke-width="1"/>
+      <rect x="10" y="10" width="64" height="64" rx="8" fill="#0a1220"/>
+      <text x="42" y="52" text-anchor="middle" font-size="30">🌬️</text>
+      <text x="85" y="26" font-family="'Courier New', monospace" font-size="8" fill="#546e7a">#003</text>
+      <text x="85" y="40" font-family="'Courier New', monospace" font-size="13" font-weight="bold" fill="#e2e8f0">SAANSATION</text>
+      <rect x="85" y="44" width="42" height="14" rx="3" fill="#1b5e20"/>
+      <text x="106" y="54" text-anchor="middle" font-family="'Courier New', monospace" font-size="7" fill="#c8e6c9">GRASS</text>
+      <rect x="132" y="44" width="52" height="14" rx="3" fill="#6a1b9a"/>
+      <text x="158" y="54" text-anchor="middle" font-family="'Courier New', monospace" font-size="7" fill="#e1bee7">PSYCHIC</text>
+      <text x="85" y="68" font-family="'Courier New', monospace" font-size="9" fill="#9fa8da">Born in Delhi smog. Predicts AQI spikes days ahead via</text>
+      <text x="85" y="80" font-family="'Courier New', monospace" font-size="9" fill="#9fa8da">LSTM. Policy Simulator lets authorities test interventions.</text>
+      <rect x="85" y="84" width="200" height="5" rx="2" fill="#1e1e3a"/>
+      <rect x="85" y="84" width="180" height="5" rx="2" fill="url(#hpGreen)">
+        <animate attributeName="width" from="0" to="180" dur="1.2s" begin="0.6s" fill="freeze"/>
+      </rect>
+      <text x="292" y="89" font-family="'Courier New', monospace" font-size="8" fill="#546e7a">HP 90%</text>
+      <rect x="606" y="10" width="108" height="18" rx="4" fill="#4a148c"/>
+      <text x="660" y="22" text-anchor="middle" font-family="'Courier New', monospace" font-size="8" fill="#e040fb">★ TROPHY</text>
+    </g>
+
+    <!-- Entry 4 — Groove Trio -->
+    <g transform="translate(16, 360)">
+      <rect width="728" height="96" rx="8" fill="#0f0f1a" stroke="#2a2a4a" stroke-width="1"/>
+      <rect x="10" y="10" width="64" height="64" rx="8" fill="#0d0d1a"/>
+      <text x="42" y="52" text-anchor="middle" font-size="30">🎵</text>
+      <text x="85" y="26" font-family="'Courier New', monospace" font-size="8" fill="#546e7a">#004 · #005 · #006</text>
+      <text x="85" y="40" font-family="'Courier New', monospace" font-size="13" font-weight="bold" fill="#e2e8f0">GROOVEMON TRIO</text>
+      <rect x="85" y="44" width="52" height="14" rx="3" fill="#f57f17"/>
+      <text x="111" y="54" text-anchor="middle" font-family="'Courier New', monospace" font-size="7" fill="#fff9c4">ELECTRIC</text>
+      <rect x="142" y="44" width="36" height="14" rx="3" fill="#37474f"/>
+      <text x="160" y="54" text-anchor="middle" font-family="'Courier New', monospace" font-size="7" fill="#cfd8dc">STEEL</text>
+      <rect x="183" y="44" width="38" height="14" rx="3" fill="#0d47a1"/>
+      <text x="202" y="54" text-anchor="middle" font-family="'Courier New', monospace" font-size="7" fill="#bbdefb">WATER</text>
+      <text x="85" y="68" font-family="'Courier New', monospace" font-size="9" fill="#9fa8da">Rare trio — Web PWA, Android &amp; Backend forms. Habit Mix</text>
+      <text x="85" y="80" font-family="'Courier New', monospace" font-size="9" fill="#9fa8da">+ Skip Intelligence. Fully offline. React·Kotlin·Node.js</text>
+      <rect x="85" y="84" width="200" height="5" rx="2" fill="#1e1e3a"/>
+      <rect x="85" y="84" width="200" height="5" rx="2" fill="url(#hpBlue)">
+        <animate attributeName="width" from="0" to="200" dur="1.2s" begin="0.7s" fill="freeze"/>
+      </rect>
+      <text x="292" y="89" font-family="'Courier New', monospace" font-size="8" fill="#546e7a">HP 100%</text>
+      <rect x="612" y="10" width="100" height="18" rx="4" fill="#0d47a1"/>
+      <text x="662" y="22" text-anchor="middle" font-family="'Courier New', monospace" font-size="8" fill="#90caf9">✓ DONE</text>
+    </g>
+
+    <!-- Entry 5 — NXTCART -->
+    <g transform="translate(16, 465)">
+      <rect width="728" height="96" rx="8" fill="#0f0f1a" stroke="#2a2a4a" stroke-width="1"/>
+      <rect x="10" y="10" width="64" height="64" rx="8" fill="#0f0a00"/>
+      <text x="42" y="52" text-anchor="middle" font-size="30">🛒</text>
+      <text x="85" y="26" font-family="'Courier New', monospace" font-size="8" fill="#546e7a">#007</text>
+      <text x="85" y="40" font-family="'Courier New', monospace" font-size="13" font-weight="bold" fill="#e2e8f0">NXTCARTMON</text>
+      <rect x="85" y="44" width="36" height="14" rx="3" fill="#37474f"/>
+      <text x="103" y="54" text-anchor="middle" font-family="'Courier New', monospace" font-size="7" fill="#cfd8dc">STEEL</text>
+      <rect x="126" y="44" width="52" height="14" rx="3" fill="#f57f17"/>
+      <text x="152" y="54" text-anchor="middle" font-family="'Courier New', monospace" font-size="7" fill="#fff9c4">ELECTRIC</text>
+      <text x="85" y="68" font-family="'Courier New', monospace" font-size="9" fill="#9fa8da">Hardware-ready cart that weighs items and blocks checkout</text>
+      <text x="85" y="80" font-family="'Courier New', monospace" font-size="9" fill="#9fa8da">until scale agrees. Connects to RPi with one config flip.</text>
+      <rect x="85" y="84" width="200" height="5" rx="2" fill="#1e1e3a"/>
+      <rect x="85" y="84" width="170" height="5" rx="2" fill="url(#hpOrange)">
+        <animate attributeName="width" from="0" to="170" dur="1.2s" begin="0.8s" fill="freeze"/>
+      </rect>
+      <text x="292" y="89" font-family="'Courier New', monospace" font-size="8" fill="#546e7a">HP 85%</text>
+      <rect x="612" y="10" width="100" height="18" rx="4" fill="#0d47a1"/>
+      <text x="662" y="22" text-anchor="middle" font-family="'Courier New', monospace" font-size="8" fill="#90caf9">✓ DONE</text>
+    </g>
+  </g>
+
+  <!-- ============ ACTIVE PARTY ============ -->
+  <g transform="translate(20, 1040)">
+    <rect width="760" height="130" rx="10" fill="#1a1a2e" stroke="#cc0000" stroke-width="2"/>
+    <rect x="0" y="0" width="760" height="32" rx="10" fill="#cc0000"/>
+    <rect x="0" y="20" width="760" height="12" fill="#cc0000"/>
+    <text x="20" y="21" font-family="'Courier New', monospace" font-size="10" fill="#ffcc00" letter-spacing="2">▶ ACTIVE PARTY — CORE SKILLS</text>
+
+    <!-- Kotlin -->
+    <g transform="translate(16,42)">
+      <rect width="108" height="78" rx="8" fill="#0f0f1a" stroke="#2a2a4a" stroke-width="1"/>
+      <text x="54" y="30" text-anchor="middle" font-size="22">⚔️</text>
+      <text x="54" y="48" text-anchor="middle" font-family="'Courier New', monospace" font-size="9" fill="#90a4ae">Kotlin</text>
+      <text x="54" y="60" text-anchor="middle" font-family="'Courier New', monospace" font-size="8" fill="#546e7a">LV 82</text>
+      <rect x="10" y="66" width="88" height="4" rx="2" fill="#1e1e3a"/>
+      <rect x="10" y="66" width="72" height="4" rx="2" fill="#7986cb">
+        <animate attributeName="width" from="0" to="72" dur="1s" begin="0.2s" fill="freeze"/>
+      </rect>
+    </g>
+    <!-- Flutter -->
+    <g transform="translate(132,42)">
+      <rect width="108" height="78" rx="8" fill="#0f0f1a" stroke="#2a2a4a" stroke-width="1"/>
+      <text x="54" y="30" text-anchor="middle" font-size="22">🌊</text>
+      <text x="54" y="48" text-anchor="middle" font-family="'Courier New', monospace" font-size="9" fill="#90a4ae">Flutter</text>
+      <text x="54" y="60" text-anchor="middle" font-family="'Courier New', monospace" font-size="8" fill="#546e7a">LV 74</text>
+      <rect x="10" y="66" width="88" height="4" rx="2" fill="#1e1e3a"/>
+      <rect x="10" y="66" width="65" height="4" rx="2" fill="#42a5f5">
+        <animate attributeName="width" from="0" to="65" dur="1s" begin="0.3s" fill="freeze"/>
+      </rect>
+    </g>
+    <!-- React -->
+    <g transform="translate(248,42)">
+      <rect width="108" height="78" rx="8" fill="#0f0f1a" stroke="#2a2a4a" stroke-width="1"/>
+      <text x="54" y="30" text-anchor="middle" font-size="22">⚡</text>
+      <text x="54" y="48" text-anchor="middle" font-family="'Courier New', monospace" font-size="9" fill="#90a4ae">React/TS</text>
+      <text x="54" y="60" text-anchor="middle" font-family="'Courier New', monospace" font-size="8" fill="#546e7a">LV 79</text>
+      <rect x="10" y="66" width="88" height="4" rx="2" fill="#1e1e3a"/>
+      <rect x="10" y="66" width="70" height="4" rx="2" fill="#ffee58">
+        <animate attributeName="width" from="0" to="70" dur="1s" begin="0.4s" fill="freeze"/>
+      </rect>
+    </g>
+    <!-- Python -->
+    <g transform="translate(364,42)">
+      <rect width="108" height="78" rx="8" fill="#0f0f1a" stroke="#2a2a4a" stroke-width="1"/>
+      <text x="54" y="30" text-anchor="middle" font-size="22">🔥</text>
+      <text x="54" y="48" text-anchor="middle" font-family="'Courier New', monospace" font-size="9" fill="#90a4ae">Python</text>
+      <text x="54" y="60" text-anchor="middle" font-family="'Courier New', monospace" font-size="8" fill="#546e7a">LV 71</text>
+      <rect x="10" y="66" width="88" height="4" rx="2" fill="#1e1e3a"/>
+      <rect x="10" y="66" width="62" height="4" rx="2" fill="#ef5350">
+        <animate attributeName="width" from="0" to="62" dur="1s" begin="0.5s" fill="freeze"/>
+      </rect>
+    </g>
+    <!-- Node -->
+    <g transform="translate(480,42)">
+      <rect width="108" height="78" rx="8" fill="#0f0f1a" stroke="#2a2a4a" stroke-width="1"/>
+      <text x="54" y="30" text-anchor="middle" font-size="22">🌿</text>
+      <text x="54" y="48" text-anchor="middle" font-family="'Courier New', monospace" font-size="9" fill="#90a4ae">Node.js</text>
+      <text x="54" y="60" text-anchor="middle" font-family="'Courier New', monospace" font-size="8" fill="#546e7a">LV 76</text>
+      <rect x="10" y="66" width="88" height="4" rx="2" fill="#1e1e3a"/>
+      <rect x="10" y="66" width="67" height="4" rx="2" fill="#66bb6a">
+        <animate attributeName="width" from="0" to="67" dur="1s" begin="0.6s" fill="freeze"/>
+      </rect>
+    </g>
+    <!-- PyTorch -->
+    <g transform="translate(596,42)">
+      <rect width="108" height="78" rx="8" fill="#0f0f1a" stroke="#2a2a4a" stroke-width="1"/>
+      <text x="54" y="30" text-anchor="middle" font-size="22">🧠</text>
+      <text x="54" y="48" text-anchor="middle" font-family="'Courier New', monospace" font-size="9" fill="#90a4ae">PyTorch</text>
+      <text x="54" y="60" text-anchor="middle" font-family="'Courier New', monospace" font-size="8" fill="#546e7a">LV 58</text>
+      <rect x="10" y="66" width="88" height="4" rx="2" fill="#1e1e3a"/>
+      <rect x="10" y="66" width="51" height="4" rx="2" fill="#ce93d8">
+        <animate attributeName="width" from="0" to="51" dur="1s" begin="0.7s" fill="freeze"/>
+      </rect>
+    </g>
+  </g>
+
+  <!-- ============ TECH SHELF ============ -->
+  <g transform="translate(20, 1185)">
+    <rect width="760" height="590" rx="10" fill="#1a1a2e" stroke="#cc0000" stroke-width="2"/>
+    <rect x="0" y="0" width="760" height="32" rx="10" fill="#cc0000"/>
+    <rect x="0" y="20" width="760" height="12" fill="#cc0000"/>
+    <text x="20" y="21" font-family="'Courier New', monospace" font-size="10" fill="#ffcc00" letter-spacing="2">▶ COMPLETE MOVE POOL — ALL TECHNOLOGIES</text>
+
+    <!-- Languages -->
+    <text x="20" y="55" font-family="'Courier New', monospace" font-size="9" fill="#90a4ae" letter-spacing="2">⚔️  LANGUAGES</text>
+    <line x1="20" y1="60" x2="740" y2="60" stroke="#2a2a4a" stroke-width="1"/>
+
+    <!-- Row of tech badges using devicon images -->
+    <!-- Kotlin -->
+    <image x="20" y="68" width="28" height="28" href="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg"/>
+    <text x="34" y="106" text-anchor="middle" font-family="'Courier New', monospace" font-size="8" fill="#90a4ae">Kotlin</text>
+
+    <image x="72" y="68" width="28" height="28" href="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg"/>
+    <text x="86" y="106" text-anchor="middle" font-family="'Courier New', monospace" font-size="8" fill="#90a4ae">Dart</text>
+
+    <image x="124" y="68" width="28" height="28" href="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"/>
+    <text x="138" y="106" text-anchor="middle" font-family="'Courier New', monospace" font-size="8" fill="#90a4ae">TypeScript</text>
+
+    <image x="186" y="68" width="28" height="28" href="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"/>
+    <text x="200" y="106" text-anchor="middle" font-family="'Courier New', monospace" font-size="8" fill="#90a4ae">JavaScript</text>
+
+    <image x="248" y="68" width="28" height="28" href="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"/>
+    <text x="262" y="106" text-anchor="middle" font-family="'Courier New', monospace" font-size="8" fill="#90a4ae">Python</text>
+
+    <image x="300" y="68" width="28" height="28" href="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"/>
+    <text x="314" y="106" text-anchor="middle" font-family="'Courier New', monospace" font-size="8" fill="#90a4ae">Java</text>
+
+    <image x="352" y="68" width="28" height="28" href="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg"/>
+    <text x="366" y="106" text-anchor="middle" font-family="'Courier New', monospace" font-size="8" fill="#90a4ae">C / C++</text>
+
+    <image x="414" y="68" width="28" height="28" href="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"/>
+    <text x="428" y="106" text-anchor="middle" font-family="'Courier New', monospace" font-size="8" fill="#90a4ae">HTML/CSS</text>
+
+    <image x="476" y="68" width="28" height="28" href="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"/>
+    <text x="490" y="106" text-anchor="middle" font-family="'Courier New', monospace" font-size="8" fill="#90a4ae">SQL</text>
+
+    <!-- Mobile -->
+    <text x="20" y="128" font-family="'Courier New', monospace" font-size="9" fill="#ce93d8" letter-spacing="2">🔮  MOBILE</text>
+    <line x1="20" y1="133" x2="740" y2="133" stroke="#2a2a4a" stroke-width="1"/>
+
+    <image x="20" y="140" width="28" height="28" href="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg"/>
+    <text x="34" y="178" text-anchor="middle" font-family="'Courier New', monospace" font-size="8" fill="#90a4ae">Android</text>
+
+    <image x="72" y="140" width="28" height="28" href="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg"/>
+    <text x="86" y="178" text-anchor="middle" font-family="'Courier New', monospace" font-size="8" fill="#90a4ae">Flutter</text>
+
+    <image x="124" y="140" width="28" height="28" href="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"/>
+    <text x="138" y="178" text-anchor="middle" font-family="'Courier New', monospace" font-size="8" fill="#90a4ae">React Native</text>
+
+    <image x="196" y="140" width="28" height="28" href="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/expo/expo-original.svg"/>
+    <text x="210" y="178" text-anchor="middle" font-family="'Courier New', monospace" font-size="8" fill="#90a4ae">Expo</text>
+
+    <!-- Web -->
+    <text x="20" y="200" font-family="'Courier New', monospace" font-size="9" fill="#ffee58" letter-spacing="2">⚡  WEB</text>
+    <line x1="20" y1="205" x2="740" y2="205" stroke="#2a2a4a" stroke-width="1"/>
+
+    <image x="20" y="212" width="28" height="28" href="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"/>
+    <text x="34" y="250" text-anchor="middle" font-family="'Courier New', monospace" font-size="8" fill="#90a4ae">React</text>
+
+    <image x="72" y="212" width="28" height="28" href="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg"/>
+    <text x="86" y="250" text-anchor="middle" font-family="'Courier New', monospace" font-size="8" fill="#90a4ae">Vite</text>
+
+    <image x="124" y="212" width="28" height="28" href="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg"/>
+    <text x="138" y="250" text-anchor="middle" font-family="'Courier New', monospace" font-size="8" fill="#90a4ae">Next.js</text>
+
+    <image x="176" y="212" width="28" height="28" href="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg"/>
+    <text x="190" y="250" text-anchor="middle" font-family="'Courier New', monospace" font-size="8" fill="#90a4ae">Tailwind</text>
+
+    <!-- Backend -->
+    <text x="20" y="272" font-family="'Courier New', monospace" font-size="9" fill="#ef9a9a" letter-spacing="2">🔥  BACKEND</text>
+    <line x1="20" y1="277" x2="740" y2="277" stroke="#2a2a4a" stroke-width="1"/>
+
+    <image x="20" y="284" width="28" height="28" href="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"/>
+    <text x="34" y="322" text-anchor="middle" font-family="'Courier New', monospace" font-size="8" fill="#90a4ae">Node.js</text>
+
+    <image x="72" y="284" width="28" height="28" href="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg"/>
+    <text x="86" y="322" text-anchor="middle" font-family="'Courier New', monospace" font-size="8" fill="#90a4ae">Express</text>
+
+    <image x="124" y="284" width="28" height="28" href="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg"/>
+    <text x="138" y="322" text-anchor="middle" font-family="'Courier New', monospace" font-size="8" fill="#90a4ae">Django</text>
+
+    <image x="176" y="284" width="28" height="28" href="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg"/>
+    <text x="190" y="322" text-anchor="middle" font-family="'Courier New', monospace" font-size="8" fill="#90a4ae">FastAPI</text>
+
+    <!-- Databases -->
+    <text x="20" y="344" font-family="'Courier New', monospace" font-size="9" fill="#80cbc4" letter-spacing="2">🌊  DATABASES</text>
+    <line x1="20" y1="349" x2="740" y2="349" stroke="#2a2a4a" stroke-width="1"/>
+
+    <image x="20" y="356" width="28" height="28" href="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"/>
+    <text x="34" y="394" text-anchor="middle" font-family="'Courier New', monospace" font-size="8" fill="#90a4ae">PostgreSQL</text>
+
+    <image x="82" y="356" width="28" height="28" href="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg"/>
+    <text x="96" y="394" text-anchor="middle" font-family="'Courier New', monospace" font-size="8" fill="#90a4ae">Redis</text>
+
+    <image x="134" y="356" width="28" height="28" href="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"/>
+    <text x="148" y="394" text-anchor="middle" font-family="'Courier New', monospace" font-size="8" fill="#90a4ae">MongoDB</text>
+
+    <image x="186" y="356" width="28" height="28" href="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg"/>
+    <text x="200" y="394" text-anchor="middle" font-family="'Courier New', monospace" font-size="8" fill="#90a4ae">Firebase</text>
+
+    <image x="238" y="356" width="28" height="28" href="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg"/>
+    <text x="252" y="394" text-anchor="middle" font-family="'Courier New', monospace" font-size="8" fill="#90a4ae">Supabase</text>
+
+    <image x="290" y="356" width="28" height="28" href="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/appwrite/appwrite-original.svg"/>
+    <text x="304" y="394" text-anchor="middle" font-family="'Courier New', monospace" font-size="8" fill="#90a4ae">Appwrite</text>
+
+    <!-- AI/ML -->
+    <text x="20" y="416" font-family="'Courier New', monospace" font-size="9" fill="#a5d6a7" letter-spacing="2">🌿  AI / ML</text>
+    <line x1="20" y1="421" x2="740" y2="421" stroke="#2a2a4a" stroke-width="1"/>
+
+    <image x="20" y="428" width="28" height="28" href="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg"/>
+    <text x="34" y="466" text-anchor="middle" font-family="'Courier New', monospace" font-size="8" fill="#90a4ae">PyTorch</text>
+
+    <image x="72" y="428" width="28" height="28" href="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg"/>
+    <text x="86" y="466" text-anchor="middle" font-family="'Courier New', monospace" font-size="8" fill="#90a4ae">TensorFlow</text>
+
+    <image x="134" y="428" width="28" height="28" href="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg"/>
+    <text x="148" y="466" text-anchor="middle" font-family="'Courier New', monospace" font-size="8" fill="#90a4ae">Scikit-learn</text>
+
+    <image x="196" y="428" width="28" height="28" href="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg"/>
+    <text x="210" y="466" text-anchor="middle" font-family="'Courier New', monospace" font-size="8" fill="#90a4ae">NumPy</text>
+
+    <image x="248" y="428" width="28" height="28" href="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg"/>
+    <text x="262" y="466" text-anchor="middle" font-family="'Courier New', monospace" font-size="8" fill="#90a4ae">Pandas</text>
+
+    <!-- Tools -->
+    <text x="20" y="488" font-family="'Courier New', monospace" font-size="9" fill="#ffb74d" letter-spacing="2">🔧  TOOLS &amp; DEVOPS</text>
+    <line x1="20" y1="493" x2="740" y2="493" stroke="#2a2a4a" stroke-width="1"/>
+
+    <image x="20" y="500" width="28" height="28" href="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"/>
+    <text x="34" y="538" text-anchor="middle" font-family="'Courier New', monospace" font-size="8" fill="#90a4ae">Docker</text>
+
+    <image x="72" y="500" width="28" height="28" href="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"/>
+    <text x="86" y="538" text-anchor="middle" font-family="'Courier New', monospace" font-size="8" fill="#90a4ae">GH Actions</text>
+
+    <image x="134" y="500" width="28" height="28" href="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg"/>
+    <text x="148" y="538" text-anchor="middle" font-family="'Courier New', monospace" font-size="8" fill="#90a4ae">Figma</text>
+
+    <image x="186" y="500" width="28" height="28" href="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg"/>
+    <text x="200" y="538" text-anchor="middle" font-family="'Courier New', monospace" font-size="8" fill="#90a4ae">VS Code</text>
+
+    <image x="238" y="500" width="28" height="28" href="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/androidstudio/androidstudio-original.svg"/>
+    <text x="252" y="538" text-anchor="middle" font-family="'Courier New', monospace" font-size="8" fill="#90a4ae">Android Studio</text>
+
+    <image x="300" y="500" width="28" height="28" href="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg"/>
+    <text x="314" y="538" text-anchor="middle" font-family="'Courier New', monospace" font-size="8" fill="#90a4ae">Arduino</text>
+
+    <image x="352" y="500" width="28" height="28" href="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/raspberrypi/raspberrypi-original.svg"/>
+    <text x="366" y="538" text-anchor="middle" font-family="'Courier New', monospace" font-size="8" fill="#90a4ae">Raspberry Pi</text>
+
+    <image x="414" y="500" width="28" height="28" href="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"/>
+    <text x="428" y="538" text-anchor="middle" font-family="'Courier New', monospace" font-size="8" fill="#90a4ae">Git</text>
+
+    <image x="466" y="500" width="28" height="28" href="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prisma/prisma-original.svg"/>
+    <text x="480" y="538" text-anchor="middle" font-family="'Courier New', monospace" font-size="8" fill="#90a4ae">Prisma</text>
+
+    <!-- Divider -->
+    <line x1="20" y1="555" x2="740" y2="555" stroke="#2a2a4a" stroke-width="1"/>
+    <text x="380" y="572" text-anchor="middle" font-family="'Courier New', monospace" font-size="9" fill="#546e7a">POKÉDEX OS v3.0 · TRAINER SINCE 2022 · MUMBAI REGION · ID: ABHISHEKOG19</text>
+  </g>
+
+</svg>
